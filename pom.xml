@@ -3,7 +3,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.redhat</groupId>
-  <artifactId>drools-canonical-model-example</artifactId>
+  <artifactId>drools-canonical-model-loop-issue</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <!-- Use KJAR packaging to enable the KIE Maven Plugin and enable canonical/executable model compilation. -->
   <packaging>kjar</packaging>
@@ -11,14 +11,17 @@
   <description>Drools Canonical Model Example</description>
 
   <properties>
-    <version.org.kie>7.34.0.Final</version.org.kie>
+    <version.org.kie>7.35.0.Final</version.org.kie>
+    <!--
     <version.com.redhat.ba>7.7.0.redhat-00002</version.com.redhat.ba>
+    -->
     <surefire.version>2.22.1</surefire.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
+<!--
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -30,24 +33,29 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  -->
 
   <dependencies>
     <dependency>
       <groupId>org.kie</groupId>
       <artifactId>kie-api</artifactId>
+      <version>${version.org.kie}</version>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-core</artifactId>
+      <version>${version.org.kie}</version>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-compiler</artifactId>
+      <version>${version.org.kie}</version>
     </dependency>
     <!-- Adding this dependency enables Canonical/Executable model compilation. The default is now 'YES_WITHDRL'. I.e., the DRL will be in the KJAR for documentation purposes. -->
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-model-compiler</artifactId>
+      <version>${version.org.kie}</version>
     </dependency>
 
     <dependency>
@@ -62,7 +70,7 @@
       <plugin>
         <groupId>org.kie</groupId>
         <artifactId>kie-maven-plugin</artifactId>
-        <version>7.33.0.Final-redhat-00002</version>
+        <version>${version.org.kie}</version>
         <extensions>true</extensions>
       </plugin>
     </plugins>

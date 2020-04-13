@@ -2,9 +2,12 @@ package com.redhat;
 
 import com.redhat.Person;
 
-rule "Is adult" 
+rule "Set Duncan's age" 
 when
-    $p:Person(age >= 18)
+    $p: Person(name == "Duncan")
 then
-    System.out.println($p.getName() + " is an adult.");
+    System.out.println("Found: " + $p.getName());
+    modify($p) {
+        setAge(41);
+    }
 end

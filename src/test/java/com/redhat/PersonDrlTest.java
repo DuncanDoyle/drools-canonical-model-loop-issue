@@ -21,14 +21,9 @@ public class PersonDrlTest {
         duncan.setName("Duncan");
         duncan.setAge(41);
 
-        Person jason = new Person();
-        jason.setName("Jason");
-        jason.setAge(10);
-        
         kieSession.insert(duncan);
-        kieSession.insert(jason);
-
         kieSession.fireAllRules();
+        kieSession.dispose();
     }
     
 
