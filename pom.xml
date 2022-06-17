@@ -11,7 +11,7 @@
   <description>Drools Canonical Model Example</description>
 
   <properties>
-    <version.org.kie>7.35.0.Final</version.org.kie>
+    <version.org.kie>7.60.0.Final</version.org.kie>
     <!--
     <version.com.redhat.ba>7.7.0.redhat-00002</version.com.redhat.ba>
     -->
